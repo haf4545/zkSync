@@ -1,0 +1,20 @@
+const fs = require('fs');
+
+// Создание объекта для записи в JSON
+const data = {
+  name: "John Doe",
+  age: 25,
+  city: "New York"
+};
+
+// Преобразование объекта в формат JSON
+const jsonData = JSON.stringify(data);
+
+// Запись данных в файл
+fs.writeFile('main.json', jsonData, 'utf8', function(err) {
+  if (err) {
+    console.log("Ошибка при записи файла:", err);
+  } else {
+    console.log("Данные успешно записаны в файл main.json");
+  }
+});
